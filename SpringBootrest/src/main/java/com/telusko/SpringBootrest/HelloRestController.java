@@ -39,4 +39,16 @@ public class HelloRestController {
         return "Deleted"+postId;
     }
 
+    @PostMapping("load")
+    public String loadData() {
+        service.load();
+        return "success";
+    }
+  @GetMapping("jobPosts/Keyword/{keyword}")
+    public List<JobPost> searchByKeyword(@PathVariable String keyword){
+        return service.searchByKeyword(keyword);
+  }
+
 }
+
+
